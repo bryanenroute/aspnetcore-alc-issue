@@ -20,7 +20,8 @@ namespace AspNetCoreApp
             Host.CreateDefaultBuilder(args)
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
-                    webBuilder.UseStartup<Startup>();
+                    webBuilder.UseWebRoot(@"..\..\..\..\AspNetCoreApp\wwwroot")
+                    .UseStartup<Startup>();
                 });
     }
 }

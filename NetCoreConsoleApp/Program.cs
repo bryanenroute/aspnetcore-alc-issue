@@ -8,7 +8,6 @@ namespace NetCoreConsoleApp
     {
         static void Main(string[] args)
         {
-            //Fails!
             FileInfo asm = new FileInfo(@"..\..\..\..\AspNetCoreApp\bin\debug\netcoreapp3.0\AspNetCoreApp.dll");
             var moduleDirectory = asm.DirectoryName;
 

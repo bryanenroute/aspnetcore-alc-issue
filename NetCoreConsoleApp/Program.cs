@@ -15,6 +15,9 @@ namespace NetCoreConsoleApp
             ModuleAssemblyLoadContext context = new ModuleAssemblyLoadContext(asm.Name, moduleDirectory, typeof(IModule));
             context.Scan();
 
+            //Lets ModuleAssemblyLoadContext be designated as the 'correct' ALC, H/T @davidfowl
+            using var _ = context.EnterContextualReflection();
+            
             foreach (var module in context.GetImplementations<IModule>())
             {
                 module.Start();
